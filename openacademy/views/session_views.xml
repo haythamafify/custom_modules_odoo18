@@ -1,0 +1,143 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record id="session_list" model="ir.ui.view">
+            <field name="name">session list</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <list decoration-info="duration&lt;5" decoration-danger="duration&gt;15">
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="duration" invisible="1"/>
+
+                    <field name="end_date"/>
+                    <field name="seats"/>
+                    <field name="course_id"/>
+                    <field name="instructor_id"/>
+                    <field name="attendee_Ids"/>
+                    <field name="active"/>
+                    <field name="taken_seats" widget="progressbar"/>
+                    <field name="amount"/>
+                    <field name="unit_price"/>
+                    <field name="price"/>
+                </list>
+            </field>
+        </record>
+
+
+        <!-- calendar view-->
+        <record id="calendar_view" model="ir.ui.view">
+            <field name="name">Calendar View</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <calendar string="Session Calendar" date_start="start_date" date_stop="end_date" color="instructor_id">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+        <!-- graph view-->
+        <record id="openacademy_session_graph_view" model="ir.ui.view">
+            <field name="name">openacademy_session_graph</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <graph string="participation by course">
+
+                    <field name="course_id"/>
+                    <field name="attendees_count" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        <!-- pivot view-->
+        <record id="openacademy_session_pivot_view" model="ir.ui.view">
+            <field name="name">openacademy_session_pivot</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <pivot string="participation by course">
+                    <field name="course_id"/>
+                    <field name="attendees_count" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+        <!-- explicit form view definition -->
+        <record model="ir.ui.view" id="session_form">
+            <field name="name">session form</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                        </group>
+
+                        <group string="Dates Group">
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="duration"/>
+                        </group>
+
+
+                        <group>
+                            <field name="seats"/>
+
+
+                        </group>
+                        <group>
+                            <field name="course_id"/>
+                            <field name="instructor_id"/>
+
+
+                        </group>
+                        <group>
+                            <field name="taken_seats" widget="progressbar"/>
+
+
+                        </group>
+                        <group string="Price Details">
+                            <field name="amount"/>
+                            <field name="unit_price"/>
+                            <field name="price"/>
+
+                        </group>
+                        <group>
+                            <label for="attendee_Ids"/>
+                            <field name="attendee_Ids"/>
+
+                        </group>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- explicit search view definition -->
+        <record model="ir.ui.view" id="session_search">
+            <field name="name">session search</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="start_date"/>
+
+
+                </search>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="open_academy_session_action_window">
+            <field name="name">session window</field>
+            <field name="res_model">openacademy.session</field>
+            <field name="view_mode">list,form,calendar,graph,pivot,kanban</field>
+        </record>
+
+        <menuitem name="session" id="openacademy_session" parent="open_academy_menu_root"
+                  action="open_academy_session_action_window"/>
+    </data>
+</odoo>

@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+
+        <menuitem name="open academy" id="open_academy_menu_root"/>
+
+
+    </data>
+</odoo>

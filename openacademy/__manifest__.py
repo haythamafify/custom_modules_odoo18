@@ -30,6 +30,7 @@ Long description of module's purpose
         'views/partner_view.xml',
         'views/session_views.xml',
         'views/templates.xml',
+        'wizard/wizard_view.xml',
         # 'demo/demo.xml',
     ],
     # only loaded in demonstration mode

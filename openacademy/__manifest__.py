@@ -31,6 +31,7 @@ Long description of module's purpose
         'views/session_views.xml',
         'views/templates.xml',
         'wizard/wizard_view.xml',
+        'reports/session_report.xml',
         # 'demo/demo.xml',
     ],
     # only loaded in demonstration mode

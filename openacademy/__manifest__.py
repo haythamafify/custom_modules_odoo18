@@ -18,7 +18,7 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','board'],
 
     # always loaded
     'data': [
@@ -30,6 +30,7 @@ Long description of module's purpose
         'views/partner_view.xml',
         'views/session_views.xml',
         'views/templates.xml',
+        'views/session_board_views.xml',
         'wizard/wizard_view.xml',
         'reports/session_report.xml',
         # 'demo/demo.xml',

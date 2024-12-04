@@ -1,0 +1,4 @@
+version 18
+Alias Domain :  gmail.com
+
+Outgoing Mail Servers

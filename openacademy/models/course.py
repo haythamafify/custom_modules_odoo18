@@ -3,6 +3,7 @@ from odoo import models, fields
 
 class Course(models.Model):
     _name = 'openacademy.course'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'openacademy.course'
 
     name = fields.Char(string="Title", required=True)

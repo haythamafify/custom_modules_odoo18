@@ -21,6 +21,13 @@
             <field name="model">openacademy.course</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="submitted,department_manager_approve,dean_of_the_college_approve"/>
+                          <button name="action_submit"  string="Submit" type="object"
+                    invisible="state != 'draft'" class="btn-primary"
+                    />
+                    </header>
                     <sheet>
                         <group>
                             <field name="name"/>

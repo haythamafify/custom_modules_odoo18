@@ -3,3 +3,4 @@ access_openacademy_openacademy,openacademy.openacademy,model_openacademy_openaca
 access_openacademy_openacademy,openacademy.openacademy,model_openacademy_openacademy,,1,1,1,1
 access_openacademy_course,openacademy.course,model_openacademy_course,group_manager,1,1,1,1
 access_openacademy_session,openacademy.session,model_openacademy_session,group_manager,1,1,1,1
+access_student_student,student_student,model_student_student,group_manager,1,1,1,1

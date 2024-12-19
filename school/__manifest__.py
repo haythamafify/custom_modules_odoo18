@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "openacademy",
+    'name': "school",
 
     'summary': "Short (1 phrase/line) summary of the module's purpose",
 
@@ -18,27 +18,18 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'board', 'mail'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
-
-        'security/security.xml',
-        'security/ir.model.access.csv',
-        'views/base_menu.xml',
+        # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/partner_view.xml',
-        'views/session_views.xml',
         'views/templates.xml',
-        'views/session_board_views.xml',
         'views/students_process_view.xml',
-        'wizard/wizard_view.xml',
-        
-        'reports/session_report.xml',
-        # 'demo/demo.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
 }
+

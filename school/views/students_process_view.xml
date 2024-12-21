@@ -5,15 +5,21 @@
         <field name="arch" type="xml">
             <form string="Student">
                 <sheet>
-                    <group>
+                    <group col="2">
                         <field name="name"/>
+                    </group>
+                    <group col="4">
+
                         <field name="amount"/>
-                        <field name="department_id"/>
+                        <field name="department_id" domain="[('name', 'like', 'cs')]"/>
                         <field name="subject_ids"/>
                         <field name="result_student_ids"/>
                         <field name="age"/>
                         <field name="date_of_birth"/>
+                        <field name="is_student"/>
                     </group>
+
+
                 </sheet>
             </form>
         </field>
@@ -29,6 +35,8 @@
                 <field name="department_id"/>
                 <field name="age"/>
                 <field name="date_of_birth"/>
+                <field name="is_student"/>
+
             </list>
         </field>
     </record>
@@ -55,3 +63,4 @@
 
 
 </odoo>
+        <!-- 1:10 -->

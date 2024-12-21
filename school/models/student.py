@@ -1,19 +1,22 @@
-from odoo import models, fields, api
 from datetime import date
+
 from dateutil.relativedelta import relativedelta
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError  # استيراد ValidationError
 
 
 class Student(models.Model):
     _name = "student.student"
     _description = "Student"
 
-    name = fields.Char(string="Student Name", required=True)
-    amount = fields.Float(string="Fees", required=True)
-    department_id = fields.Many2one("student.departments", string="Department Name", required=True)
+    name = fields.Char(string="Student Name", )
+    amount = fields.Float(string="Fees", )
+    department_id = fields.Many2one("student.departments", string="Department Name", )
     subject_ids = fields.Many2many("student.subjects", "subject_student_rel", string="Subjects")
     result_student_ids = fields.One2many("student.result", "student_id", string="Results")
     age = fields.Integer(string="Age", compute="get_age", store=True)
-    date_of_birth = fields.Date(string="Date of Birth", required=True)
+    date_of_birth = fields.Date(string="Date of Birth", )
+    is_student = fields.Boolean(string="Is Student", default=True)
 
     @api.depends("date_of_birth")
     def get_age(self):
@@ -36,7 +39,7 @@ class Departments(models.Model):
     _name = "student.departments"
     _description = "Department"
 
-    name = fields.Char(string="Department Name", required=True)
+    name = fields.Char(string="Department Name", )
     address = fields.Char(string="Address")
 
 
@@ -44,16 +47,16 @@ class Subjects(models.Model):
     _name = "student.subjects"
     _description = "Subject"
 
-    name = fields.Char(string="Subject Name", required=True)
+    name = fields.Char(string="Subject Name", )
 
 
 class Result(models.Model):
     _name = "student.result"
     _description = "Student Result"
 
-    student_id = fields.Many2one("student.student", string="Student", required=True)
-    result = fields.Float(string="Result", required=True)
-    subject_id = fields.Many2one("student.subjects", string="Subject", required=True)
+    student_id = fields.Many2one("student.student", string="Student", )
+    result = fields.Float(string="Result", )
+    subject_id = fields.Many2one("student.subjects", string="Subject", )
 
     @api.constrains('result')
     def check_result_range(self):
@@ -62,4 +65,4 @@ class Result(models.Model):
         """
         for record in self:
             if not (0 <= record.result <= 100):
-                raise ValueError("Result must be between 0 and 100.")
+                raise ValidationError("Result must be between 0 and 100.")

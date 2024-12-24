@@ -12,11 +12,14 @@
 
                         <field name="amount"/>
                         <field name="department_id" domain="[('name', 'like', 'cs')]"/>
-                        <field name="subject_ids"/>
+                        <field name="subject_ids" widget="many2many_tags"/>
                         <field name="result_student_ids"/>
                         <field name="age"/>
                         <field name="date_of_birth"/>
                         <field name="is_student"/>
+                        <!--<field name="gender" widget="selection"/>-->
+                        <field name="gender" widget="radio"/>
+
                     </group>
 
 
@@ -36,6 +39,7 @@
                 <field name="age"/>
                 <field name="date_of_birth"/>
                 <field name="is_student"/>
+                <field name="gender"/>
 
             </list>
         </field>
@@ -63,4 +67,4 @@
 
 
 </odoo>
-        <!-- 1:10 -->
+        <!-- 1:42 -->

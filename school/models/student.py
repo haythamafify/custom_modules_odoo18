@@ -17,6 +17,11 @@ class Student(models.Model):
     age = fields.Integer(string="Age", compute="get_age", store=True)
     date_of_birth = fields.Date(string="Date of Birth", )
     is_student = fields.Boolean(string="Is Student", default=True)
+    gender = fields.Selection([
+        ('male', 'Male'),
+        ('female', 'Female')
+       
+    ], string="Gender")
 
     @api.depends("date_of_birth")
     def get_age(self):

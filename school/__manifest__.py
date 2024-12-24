@@ -26,6 +26,8 @@ Long description of module's purpose
         'views/views.xml',
         'views/templates.xml',
         'views/students_process_view.xml',
+        'views/image_card_view.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [

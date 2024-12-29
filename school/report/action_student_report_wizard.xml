@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <!-- Report Action -->
+        <record id="action_student_report_wizard" model="ir.actions.report">
+            <field name="name">Student Registration Report</field>
+            <field name="model">student.registration.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">school.report_student_registration</field>
+            <field name="report_file">school.report_student_registration</field>
+            <field name="binding_model_id" ref="model_student_student"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>
+
+
+        <!--time 1:17-->

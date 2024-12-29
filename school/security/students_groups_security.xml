@@ -29,7 +29,3 @@
 </odoo>
 
 
-        <!--        &lt;!&ndash; <record id="property_user_group" model="res.groups">-->
-        <!--            <field name="name">Property User</field>-->
-        <!--        </record>-->
-

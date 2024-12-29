@@ -28,6 +28,7 @@ Long description of module's purpose
         'views/templates.xml',
         'views/students_process_view.xml',
         'views/image_card_view.xml',
+        'report/student_registraion_report.xml',
 
     ],
     # only loaded in demonstration mode

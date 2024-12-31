@@ -16,6 +16,7 @@
             </form>
         </field>
     </record>
+
     <record id="action_student_wizard" model="ir.actions.act_window">
         <field name="name">Students</field>
         <field name="res_model">student.registration.wizard</field>
@@ -24,6 +25,8 @@
     </record>
 
 
-    <menuitem id="menu_student_wizard" name="Students Registration" parent="menu_student" action="action_student_wizard"/>
+    <menuitem id="menu_student_wizard" name="Students Registration" parent="menu_student"
+              action="action_student_wizard"/>
 
 </odoo>
+

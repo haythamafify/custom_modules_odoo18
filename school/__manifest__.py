@@ -24,11 +24,12 @@ Long description of module's purpose
     'data': [
         'security/students_groups_security.xml',
         'security/ir.model.access.csv',
+        'report/student_registraion_report.xml',
+        'report/action_student_report_wizard.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/students_process_view.xml',
         'views/image_card_view.xml',
-        'report/student_registraion_report.xml',
         'wizard/student_wizard.xml',
 
     ],

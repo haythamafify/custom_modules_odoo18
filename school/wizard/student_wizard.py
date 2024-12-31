@@ -9,3 +9,5 @@ class StudentWizard(models.TransientModel):
     def print_report(self):
         data = {'department_id': self.department_id}
         return self.env.ref('school.action_student_report_wizard').report_action([], data=data)
+
+

@@ -22,6 +22,7 @@ class Student(models.Model):
         ('female', 'Female')
        
     ], string="Gender")
+    company_id = fields.Many2one("res.company", string="Company", default=lambda self: self.env.company)
 
     @api.depends("date_of_birth")
     def get_age(self):

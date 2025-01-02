@@ -26,6 +26,7 @@ Long description of module's purpose
         'security/ir.model.access.csv',
         'report/student_registraion_report.xml',
         'report/action_student_report_wizard.xml',
+        'report/analysis_report.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/students_process_view.xml',

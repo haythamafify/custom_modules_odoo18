@@ -1,3 +1,5 @@
+import io
+
 from odoo import models, fields
 
 
@@ -10,5 +12,3 @@ class StudentWizard(models.TransientModel):
         data = {'department_id': self.department_id}
         return self.env.ref('school.action_student_report_wizard').report_action([], data=data)
 
-    def print_xlsx_report(self):
-        print("print_xlsx_report")

@@ -5,12 +5,15 @@
         <field name="model">student.registration.wizard</field>
         <field name="arch" type="xml">
             <form string="Print Students">
+
+
                 <p>Please select the student department</p>
                 <group>
                     <field name="department_id"/>
                 </group>
                 <footer>
                     <button name="print_report" string="Print" type="object" class="oe_highlight" data-hotkey="q"/>
+                    <button name="print_xlsx_report" string="Print Excel report" type="object" class="oe_highlight" />
                     <button string="Cancel" class="btn btn-secondary" special="cancel" data-hotkey="x"/>
                 </footer>
             </form>

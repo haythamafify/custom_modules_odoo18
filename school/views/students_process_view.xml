@@ -4,6 +4,10 @@
         <field name="model">student.student</field>
         <field name="arch" type="xml">
             <form string="Student">
+                <header>
+                    <button name="create_product" type="object" string="Create Product" class="btn-primary"
+                            icon="fa-plus"/>
+                </header>
                 <sheet>
                     <group col="2">
                         <field name="name"/>
@@ -19,20 +23,22 @@
                         <field name="is_student"/>
                         <!--<field name="gender" widget="selection"/>-->
                         <field name="gender" widget="radio"/>
+                        <field name="image" widget="image"/>
+
 
                     </group>
                     <notebook>
                         <page string="page1">
-                        <group name="date" string="Date">
-                             <field name="date_of_birth"/>
-                        </group>
-                           
+                            <group name="date" string="Date">
+                                <field name="date_of_birth"/>
+                            </group>
+
                         </page>
                         <page string="page2">
-                        <group name="age" string="age">
-                            <field name="age"/>
-                            
-                        </group>
+                            <group name="age" string="age">
+                                <field name="age"/>
+
+                            </group>
                         </page>
                     </notebook>
 
